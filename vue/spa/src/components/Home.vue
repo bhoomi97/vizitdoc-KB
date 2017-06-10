@@ -1,13 +1,16 @@
 <template>
 	 <div class="home">
 	 	<h1> {{ message }} </h1>
+	 	<newCard></newCard>
 	 	<card></card>
+
 	 </div>	
 
 </template>
 
 <script>
 import Card from './Card.vue'
+import newCard from './newCard.vue'
 	export default {
 		name: 'Home',
 		data() {

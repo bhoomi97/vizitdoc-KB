@@ -17,28 +17,36 @@ var Link = require('./models/link'),
 	}));
 	app.use(passport.initialize());
  	app.use(passport.session());
- 	passport.serializeUser(User.serializeUser());
- 	passport.deserializeUser(User.deserializeUser());
+ 	// passport.serializeUser(User.serializeUser());
+ 	// passport.deserializeUser(User.deserializeUser());
 
 
 //Connect DB
-mongoose.connect('mongodb://localhost/knowbase');
+mongoose.connect('mongodb://127.0.0.1/knowbase');
 
 
 //Render all links
-Link.find({}, function(err,links){
-	if(err) 
-		console.log("Error.");
-	else {
-		console.log(links);
-	}
-})
+// Link.find({}, function(err,links){
+// 	if(err) 
+// 		console.log("Error.");
+// 	else {
+// 		console.log(links);
+// 	}
+// })
 
 //Routing
 app.get("/", function(req, res){
-	//If logged in Send all links
 
-	//Else prompt to signup/ sign in
+	Link.find({}, function(err,links){
+		if(err) 
+			console.log("Error.");
+		else {
+			// var json = JSON.stringify(links);
+			// res.send(JSON.parse(json))
+			res.send(links)
+		}
+	})
+	
 })
 
 app.post("/", function(req, res){
