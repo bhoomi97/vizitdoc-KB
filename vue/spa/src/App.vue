@@ -3,7 +3,6 @@
       	<router-link v-bind:to="'/home'"> Home </router-link>
       	<router-link v-bind:to="'/'"> Logout </router-link>
         <router-view></router-view>
-        <card></card>
     </div>
 </template>
 
