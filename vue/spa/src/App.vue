@@ -22,12 +22,18 @@
       margin-top: 60px;
     }
 
+    .card-wrapper {
+      padding: 10px 15px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
     .card {
       border: 1px solid #ccc;
       box-shadow: 2px 2px 3px #ccc;
       padding: 5px 15px;
-      width: 45%;
-      margin: 1%; float: left;
+      width: 300px;
     }
     .comments .username {
       font-weight: bold;

@@ -13,13 +13,13 @@
 	props: ['link', 'title','body' ],
 	
 	template: `
-	<div>
+	<div class="card-wrapper">
 		<div class="card" v-for="card in cards">
 			<h2><a v-bind:href="card.link"> {{ card.title }} </a></h2>
 			<p class="body"> {{ card.description }} </p>
 
 
-			<button @click="showComments"> show comments </button>
+			<button @click="getComments"> show comments </button>
 			<button @click="addComment"> Add comment </button>
 
 
@@ -36,7 +36,11 @@
 	</div>
 	`,
 	methods: {
-		showComments() {
+		getComments() {
+
+			this.$http.get('http://localhost:3000/'+ this.cards._id +'/comments').then(function(data){
+				
+			})
 			this.isVisible = true
 		},
 		addComment() {
@@ -61,6 +65,7 @@
 	created() {
 		this.$http.get('http://localhost:3000/').then(function(data){
 				this.cards = data.body;
+				console.log(this.cards);
 		})
 	}
 });
