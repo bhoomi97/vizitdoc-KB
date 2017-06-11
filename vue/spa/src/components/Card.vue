@@ -37,10 +37,9 @@
 	`,
 	methods: {
 		getComments() {
-
-			this.$http.get('http://localhost:3000/'+ this.cards._id +'/comments').then(function(data){
+			// this.$http.get('http://localhost:3000/'+ this.cards._id +'/comments').then(function(data){
 				
-			})
+			// })
 			this.isVisible = true
 		},
 		addComment() {
